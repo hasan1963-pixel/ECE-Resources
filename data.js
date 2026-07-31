@@ -120,6 +120,54 @@ const subjects = [
         ppt: "resources/Network_Analysis_and_Synthesis/Typical Test Signals.pptx"
       }
     ]
+  },
+   {
+    id: "Digital Electronics_Part1",       // must match the folder name in /resources/
+    title: "Digital Electronics",
+    description: "Binary numbers, conversion",
+    color: "#C98A00",
+    files: [
+      {
+        title: "Binary Arithmetic_4",
+        ppt: "resources/Digital Electronics_Part1/Binary Arithmetic_4.pdf"
+      },
+      {
+        title: "Boolean Algebra and Number System_1.pdf",
+        ppt: "resources/Digital Electronics_Part1/Boolean Algebra and Number System_1.pdf"
+      },
+      {
+        title: "CODE_7",
+        ppt: "resources/Digital Electronics_Part1/CODE_7.pdf"
+      },
+      {
+        title: "Compliments_Signed binary numbers_5",
+        ppt: "resources/Digital Electronics_Part1/Compliments_Signed binary numbers_5.pdf"
+      },
+      {
+        title: "Conversion of Number_2",
+        ppt: "resources/Digital Electronics_Part1/Conversion of Number_2.pdf"
+      },
+      {
+        title: "Conversion of Numbers_3",
+        ppt: "resources/Digital Electronics_Part1/Conversion of Numbers_3.pdf"
+      },
+      {
+        title: "Error detecting and correcting code_Hamming Code_8",
+        ppt: "resources/Digital Electronics_Part1/Error detecting and correcting code_Hamming Code_8.pdf"
+      },
+      {
+        title: "Error detecting and correcting code_Hamming Code_",
+        ppt: "resources/Digital Electronics_Part1/Error detecting and correcting code_Hamming Code_MODIFIED_2021_8.pdf"
+      },
+      {
+        title: "Floating Point Numbers_6",
+        ppt: "resources/Digital Electronics_Part1/Floating Point Numbers_6.pdf"
+      },
+      {
+        title: "LOGIC GATES",
+        ppt: "resources/Digital Electronics_Part1/LOGIC GATES_BME.pdf"
+      }
+    ]
   }
 
   // Add more subjects here, following the same pattern.
