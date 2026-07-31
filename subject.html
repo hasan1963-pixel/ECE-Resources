@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title id="page-title">Subject | ECE Resources</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo"><span class="chip"></span>ECE Resources</a>
+  <nav>
+    <a href="index.html">Home</a>
+  </nav>
+</header>
+
+<main>
+  <a href="index.html" class="back-link">&larr; Back to all subjects</a>
+
+  <div class="subject-banner" id="subject-banner">
+    <h1 id="subject-title">Subject</h1>
+    <p id="subject-description"></p>
+  </div>
+
+  <div class="resource-list" id="resource-list">
+    <!-- Resource items are injected here by script.js using data.js -->
+  </div>
+</main>
+
+<footer>
+  <div class="fname">Syed Hasan Saeed</div>
+  <div>Professor &amp; Head, Department of Electronics and Communication Engineering</div>
+  <div>Integral University, Kursi Road, Lucknow (U.P.)</div>
+  <div class="copyright">&copy; <span id="year"></span> ECE Resources</div>
+</footer>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+<script>
+  renderSubjectPage();
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

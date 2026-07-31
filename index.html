@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ECE Resources | Integral University</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo"><span class="chip"></span>ECE Resources</a>
+  <nav>
+    <a href="index.html">Home</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <svg class="trace" width="440" height="280" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="400" cy="30" r="4" fill="#3ed7c4" />
+    <circle cx="320" cy="80" r="4" fill="#3ed7c4" />
+    <circle cx="380" cy="150" r="4" fill="#3ed7c4" />
+    <circle cx="270" cy="190" r="4" fill="#3ed7c4" />
+    <circle cx="200" cy="130" r="3" fill="#f2b705" />
+    <path d="M400 30 L320 80 L380 150 L270 190 M320 80 L200 130" stroke="#3ed7c4" stroke-width="1.5" fill="none" />
+  </svg>
+  <div class="eyebrow">Dept. of Electronics &amp; Communication Engineering</div>
+  <h1>Lecture slides &amp; notes, <span>wired up</span> in one place</h1>
+  <p class="sub">Browse every subject taught in the department and download the PPTs and notes you need, updated each semester.</p>
+  <div class="prof-card">
+    <div class="avatar">SHS</div>
+    <div>
+      <div class="name">Syed Hasan Saeed</div>
+      <div class="role">Professor &amp; Head, Dept. of Electronics and Communication Engineering</div>
+      <div class="role">Integral University, Kursi Road, Lucknow (U.P.)</div>
+    </div>
+  </div>
+</section>
+
+<main>
+  <h2 class="section-title">Browse by subject</h2>
+  <p class="section-sub">Pick a subject to see its downloadable resources.</p>
+
+  <div class="grid" id="subject-grid">
+    <!-- Cards are injected here by script.js using data.js -->
+  </div>
+</main>
+
+<footer>
+  <div class="fname">Syed Hasan Saeed</div>
+  <div>Professor &amp; Head, Department of Electronics and Communication Engineering</div>
+  <div>Integral University, Kursi Road, Lucknow (U.P.)</div>
+  <div class="copyright">&copy; <span id="year"></span> ECE Resources</div>
+</footer>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+<script>
+  renderSubjectGrid();
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
