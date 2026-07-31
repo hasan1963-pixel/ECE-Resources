@@ -21,6 +21,33 @@ function resistorGraphic(color) {
   `;
 }
 
+// File-type document icon used on every PPT/notes row.
+function documentIcon() {
+  return `
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 3h10l6 6v12H4z"></path>
+      <path d="M14 3v6h6"></path>
+    </svg>
+  `;
+}
+
+// Small download-arrow icon used inside the action buttons.
+function downloadIcon() {
+  return `
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3v12"></path>
+      <path d="M7 10l5 5 5-5"></path>
+      <path d="M5 21h14"></path>
+    </svg>
+  `;
+}
+
+// encodeURI keeps spaces/special characters in filenames from breaking
+// links once the site is deployed (e.g. GitHub Pages).
+function safePath(path) {
+  return path ? encodeURI(path) : "";
+}
+
 // Builds the subject cards on index.html
 function renderSubjectGrid() {
   const grid = document.getElementById("subject-grid");
@@ -80,17 +107,27 @@ function renderSubjectPage() {
   listEl.innerHTML = subject.files
     .map(
       (file) => `
-      <div class="resource-item" style="--accent:${color}">
-        <h3>${file.title}</h3>
+      <div class="resource-item">
+        <div class="resource-icon" style="--accent:${color}">
+          ${documentIcon()}
+        </div>
+        <div class="resource-info">
+          <h3>${file.title}</h3>
+          <div class="meta">${file.notes ? "PPTX + PDF notes" : "PPTX"}</div>
+        </div>
         <div class="resource-actions">
           ${
             file.ppt
-              ? `<a class="btn primary" style="--accent:${color}" href="${file.ppt}" download>&#8681; Download PPT</a>`
+              ? `<a class="btn primary" style="--accent:${color}" href="${safePath(file.ppt)}" download>
+                  ${downloadIcon()} PPT
+                </a>`
               : ""
           }
           ${
             file.notes
-              ? `<a class="btn" href="${file.notes}" download>&#8681; Download Notes</a>`
+              ? `<a class="btn" href="${safePath(file.notes)}" download>
+                  ${downloadIcon()} Notes
+                </a>`
               : ""
           }
         </div>
