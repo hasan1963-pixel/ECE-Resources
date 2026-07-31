@@ -14,6 +14,7 @@
      - Drop the file inside that subject's folder
        (e.g. resources/maths/unit3.pptx)
      - Add one line to that subject's `files` array below.
+       (`notes` is optional — omit it if there's no notes file yet.)
 
   That's it — index.html and subject.html render everything
   automatically from this file. No other HTML needs to change.
@@ -25,46 +26,98 @@
 
 const subjects = [
   {
-    id: "maths",                 // must match the folder name in /resources/
-    title: "Mathematics",
-    description: "Algebra, calculus and geometry slides & notes.",
-    color: "#0F6D4C",
+    id: "automatic-control-system",       // must match the folder name in /resources/
+    title: "Automatic Control System",
+    description: "Transfer functions, block diagrams, signal flow graphs and system models.",
+    color: "#C98A00",
     files: [
       {
-        title: "Unit 1 - Introduction to Algebra",
-        ppt: "resources/maths/unit1.pptx",
-        notes: "resources/maths/unit1-notes.pdf"
+        title: "Analogous System",
+        ppt: "resources/Automatic-Control-System/ANALOGOUS SYSTEM.pptx"
       },
       {
-        title: "Unit 2 - Calculus Basics",
-        ppt: "resources/maths/unit2.pptx",
-        notes: "resources/maths/unit2-notes.pdf"
+        title: "Block Diagram Representation",
+        ppt: "resources/Automatic-Control-System/BLOCK DIAGRAM REPRESENTATION.pptx"
+      },
+      {
+        title: "Concept of Pole - Zero",
+        ppt: "resources/Automatic-Control-System/Concept of Pole - Zero.pptx"
+      },
+      {
+        title: "Introduction to Control Systems",
+        ppt: "resources/Automatic-Control-System/INTRODUCTION TO CONTROL SYSTEMS_21.08.20(New).pptx"
+      },
+      {
+        title: "Liquid Level System",
+        ppt: "resources/Automatic-Control-System/Liquid Level System.pptx"
+      },
+      {
+        title: "Liquid Level System (Mech. Engg. EC217)",
+        ppt: "resources/Automatic-Control-System/Liquid Level System_Mech. Engg. EC217.pptx"
+      },
+      {
+        title: "Pneumatic System",
+        ppt: "resources/Automatic-Control-System/Pneumatic System.pptx"
+      },
+      {
+        title: "Review of Laplace Transform",
+        ppt: "resources/Automatic-Control-System/Review of Laplace Transform.pptx"
+      },
+      {
+        title: "Signal Flow Graph (SFG)",
+        ppt: "resources/Automatic-Control-System/SFG.pptx"
+      },
+      {
+        title: "Thermal System",
+        ppt: "resources/Automatic-Control-System/Thermal System.pptx"
+      },
+      {
+        title: "Thermal System (Mech. Engg. EC217)",
+        ppt: "resources/Automatic-Control-System/Thermal System_Mech. Engg. EC217.pptx"
+      },
+      {
+        title: "Thermometer",
+        ppt: "resources/Automatic-Control-System/Thermometer.pptx"
+      },
+      {
+        title: "Transfer Function",
+        ppt: "resources/Automatic-Control-System/Transfer function.pptx"
       }
     ]
   },
   {
-    id: "physics",
-    title: "Physics",
-    description: "Mechanics, thermodynamics and optics.",
-    color: "#FF7A5C",
+    id: "network-analysis-and-synthesis",
+    title: "Network Analysis and Synthesis",
+    description: "Circuit laws, Laplace transform applications and network theorems.",
+    color: "#0E8A9B",
     files: [
       {
-        title: "Unit 1 - Laws of Motion",
-        ppt: "resources/physics/unit1.pptx",
-        notes: "resources/physics/unit1-notes.pdf"
-      }
-    ]
-  },
-  {
-    id: "digital-electronics",
-    title: "Digital Electronics",
-    description: "Logic gates, flip-flops and combinational circuits.",
-    color: "#9D6BFF",
-    files: [
+        title: "Basic Definitions and Laws",
+        ppt: "resources/Network_Analysis_and_Synthesis/Basic Definitions and Laws.pptx"
+      },
       {
-        title: "Unit 1 - Logic Gates",
-        ppt: "resources/digital-electronics/unit1.pptx",
-        notes: "resources/digital-electronics/unit1-notes.pdf"
+        title: "Initial Value and Final Value Theorem",
+        ppt: "resources/Network_Analysis_and_Synthesis/Initial Value and Final Value Theorem.pptx"
+      },
+      {
+        title: "Review of Laplace Transform",
+        ppt: "resources/Network_Analysis_and_Synthesis/Review of Laplace Transform.pptx"
+      },
+      {
+        title: "Solution of Differential Equation using Laplace Transform",
+        ppt: "resources/Network_Analysis_and_Synthesis/Solution of differential equation using Laplace Transform.pptx"
+      },
+      {
+        title: "Terms and Definitions Used in Circuits",
+        ppt: "resources/Network_Analysis_and_Synthesis/Terms and Definitions used in circuits.pptx"
+      },
+      {
+        title: "Transform Networks",
+        ppt: "resources/Network_Analysis_and_Synthesis/Transform Networks.pptx"
+      },
+      {
+        title: "Typical Test Signals",
+        ppt: "resources/Network_Analysis_and_Synthesis/Typical Test Signals.pptx"
       }
     ]
   }
