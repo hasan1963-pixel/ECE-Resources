@@ -192,21 +192,21 @@ h1.page-title {
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 18px;
+  gap: 20px;
 }
 
 .card {
   background: var(--card-bg);
   border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 20px;
+  border-radius: 16px;
+  padding: 22px;
   text-decoration: none;
   color: var(--ink);
   display: block;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04);
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 1px 3px rgba(16, 24, 40, 0.05);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
 }
 
 .card::before {
@@ -215,20 +215,26 @@ h1.page-title {
   top: 0;
   left: 0;
   right: 0;
-  height: 6px;
+  height: 5px;
   background: var(--accent, var(--green));
 }
 
 .card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(16, 24, 40, 0.1);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(16, 24, 40, 0.12);
+  border-color: var(--accent, var(--green));
+}
+
+.card:focus-visible {
+  outline: 2px solid var(--accent, var(--green));
+  outline-offset: 2px;
 }
 
 /* resistor graphic — signature element */
 .resistor {
   display: flex;
   align-items: center;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
 
 .resistor .lead {
@@ -238,8 +244,8 @@ h1.page-title {
 }
 
 .resistor .body {
-  width: 40px;
-  height: 16px;
+  width: 42px;
+  height: 17px;
   background: var(--resistor-body);
   border-radius: 4px;
   display: flex;
@@ -250,7 +256,7 @@ h1.page-title {
 
 .resistor .band {
   width: 3px;
-  height: 12px;
+  height: 13px;
   border-radius: 1px;
   background: var(--navy);
 }
@@ -261,23 +267,26 @@ h1.page-title {
 
 .card h3 {
   margin: 0 0 6px 0;
-  font-size: 1.05rem;
+  font-size: 1.08rem;
 }
 
 .card p.desc {
-  margin: 0 0 14px 0;
+  margin: 0 0 16px 0;
   color: var(--muted);
   font-size: 0.88rem;
+  line-height: 1.5;
 }
 
 .tag {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
   font-family: "IBM Plex Mono", monospace;
   font-size: 0.72rem;
   color: var(--accent, var(--green));
   background: color-mix(in srgb, var(--accent, var(--green)) 12%, white);
-  padding: 3px 8px;
-  border-radius: 6px;
+  padding: 4px 10px;
+  border-radius: 20px;
 }
 
 /* ---------- subject page ---------- */
@@ -316,48 +325,90 @@ h1.page-title {
   font-size: 0.95rem;
 }
 
+/* ---------- resource list (PPT/notes rows) ---------- */
+
 .resource-list {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 12px;
 }
 
 .resource-item {
   background: var(--card-bg);
   border: 1px solid var(--border);
   border-left: 6px solid var(--accent, var(--green));
-  border-radius: var(--radius);
-  padding: 1.1rem 1.5rem;
+  border-radius: 14px;
+  padding: 16px 20px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 0.75rem;
+  gap: 16px;
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
 }
 
-.resource-item h3 {
-  margin: 0;
-  font-size: 1rem;
+.resource-item:hover {
+  box-shadow: 0 4px 14px rgba(16, 24, 40, 0.08);
+}
+
+.resource-icon {
+  width: 42px;
+  height: 42px;
+  flex: none;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--accent, var(--green)) 14%, white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.resource-icon svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--accent, var(--green));
+}
+
+.resource-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.resource-info h3 {
+  margin: 0 0 2px 0;
+  font-size: 0.96rem;
+  overflow-wrap: anywhere;
+}
+
+.resource-info .meta {
+  font-size: 0.78rem;
+  color: var(--muted);
+  font-family: "IBM Plex Mono", monospace;
 }
 
 .resource-actions {
   display: flex;
-  gap: 0.6rem;
+  gap: 8px;
+  flex: none;
   flex-wrap: wrap;
 }
 
 .btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
+  gap: 6px;
+  padding: 0.55rem 1rem;
+  border-radius: 9px;
   text-decoration: none;
   font-size: 0.85rem;
   font-weight: 600;
   border: 1px solid var(--border);
   color: var(--ink);
   background: var(--paper);
+  white-space: nowrap;
+  transition: filter 0.15s ease, transform 0.1s ease;
+}
+
+.btn svg {
+  width: 15px;
+  height: 15px;
 }
 
 .btn.primary {
@@ -368,6 +419,10 @@ h1.page-title {
 
 .btn:hover {
   filter: brightness(0.95);
+}
+
+.btn:active {
+  transform: scale(0.97);
 }
 
 .empty-state {
@@ -406,5 +461,28 @@ footer .copyright {
   }
   .hero h1 {
     font-size: 1.8rem;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .resource-item {
+    flex-wrap: wrap;
+  }
+  .resource-info {
+    flex-basis: 100%;
+  }
+  .resource-actions {
+    flex-basis: 100%;
+  }
+  .resource-actions .btn {
+    flex: 1;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .prof-card {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
